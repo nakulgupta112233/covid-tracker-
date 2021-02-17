@@ -1,0 +1,349 @@
+//index.htm
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+    <title>COVID-19 TRACKER</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   
+    <div class="wrapper">
+        <header class="main-head">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+        </header>
+        <nav class="main-nav">
+            <svg xmlns="http://www.w3.org/2000/svg"  width="120" height="100" viewBox="0 0 42.709 59.559"><g id="Logo" transform="translate(-2.5 -2.5)" opacity="1"><path id="Path_104" class="logo-path" data-name="Path 104" d="M44.226,167.119c-3.338,10.351-12.373,19.793-15.73,23.047-3.359-3.256-12.4-12.71-15.738-23.07L8.72,167.08c4,14.267,17.816,26.581,18.5,27.182a1.932,1.932,0,0,0,2.553,0c.684-.6,14.476-12.9,18.488-27.148Z" transform="translate(-4.643 -133.185)" stroke-miterlimit="10" stroke-width="1"></path><path id="Path_105" class="logo-path" data-name="Path 105" d="M7.278,28.035a22.1,22.1,0,0,1-.416-4.173,16.992,16.992,0,1,1,33.985,0,22.022,22.022,0,0,1-.407,4.124q1.96,0,3.92.008a25.552,25.552,0,0,0,.348-4.129A20.854,20.854,0,1,0,3,23.863a25.444,25.444,0,0,0,.36,4.19Z" transform="translate(0 0)" stroke-miterlimit="10" stroke-width="1"></path><path id="Path_106" class="logo-path" data-name="Path 106" d="M80.064,86.12a7.867,7.867,0,1,0,7.814,7.867A7.85,7.85,0,0,0,80.064,86.12Zm0,12.608a4.742,4.742,0,1,1,4.689-4.741A4.72,4.72,0,0,1,80.064,98.728Z" transform="translate(-56.211 -67.469)" stroke-miterlimit="10" stroke-width="1"></path></g></svg>
+        </nav>
+        <article class="content"><h1>COVID-19 TRACKER (India)</h1>
+        <div class="stats-container">
+            <div class="stat">
+                <h4 >Total confirmed</h4>
+                <p id="total_cases"></p>
+            </div>
+            <div class="stat">
+                <h4 >Total Deaths</h4>
+                <p id="total_death"></p>
+            </div>
+            <div class="stat">
+                <h4 >Total Recovered</h4>
+                <p id="total_recovered"></p>
+            </div>
+            <div class="stat">
+                <h4 >Total Tests Done</h4>
+                <p id="total_tests"></p>
+            </div>
+            <div class="stat">
+                <h4 >Tests (per million)</h4>
+                <p id="test_per_million"></p>
+            </div>
+            <div class="stat">
+                <h4 >Total Active Cases</h4>
+                <p id="active_cases"></p>
+            </div>
+        </div>
+        </article> 
+        <aside class="side" >Sidebar</aside>
+        <div class="ad">Advertising</div>
+        <footer class="main-footer">The footer</footer>
+    </div>
+
+   
+
+<script src='scripts/main.js'></script>
+<script src='navscript.js'></script>
+</body>
+</html>
+
+
+_________________________________________
+ //main.css
+body{
+    background-color:#1e1d21;
+    color: white;
+}
+.stats-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 30px;   
+}
+#total_death{
+    color: red;
+}
+#total_recovered{
+    color: rgb(81, 255, 75);
+}
+#test_per_million{
+    color: rgb(235, 119, 139);
+}
+#active_cases{
+    color: yellow;
+}
+#total_tests{
+    color: orange;
+}
+.stat {
+    border-radius: 15px;
+   box-shadow: 8px 8px 30px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+    background-color: #262529;
+    color: grey;
+    font-weight: 500;
+}
+p{
+    margin-left: 20px;
+    align-content: center;
+    margin-bottom: 25pt;
+    color: #5851db
+    
+}
+h4 {
+    font-size: larger;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 20px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+* {box-sizing: border-box;}
+
+    .wrapper {
+        max-width: 1024px;
+        margin: 0 auto;
+        font: 1.2em Helvetica, arial, sans-serif;
+    }
+
+    .wrapper > * {
+       
+        background-color: #262529;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .wrapper .content{
+        background-color: #1e1d21;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 20px;
+}
+.wrapper > * {
+  grid-column: col-start / span 12;
+}
+
+@media (min-width: 500px) {
+
+  .side {
+    grid-column: col-start / span 3;
+    grid-row: 3;
+  }
+  .ad {
+    grid-column: col-start / span 3;
+    grid-row: 4;
+  }
+  .content, .main-footer {
+    grid-column: col-start 4 / span 9;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 700px) {
+  .main-nav {
+    grid-column: col-start / span 2;
+    grid-row: 2 / 4;
+  }
+  
+  .content {
+    grid-column: col-start 3 / span 8;
+    grid-row: 2 / 4;
+  }
+  .side {
+    grid-column: col-start 11 / span 2;
+    grid-row: 2;
+  }
+  .ad {
+    grid-column: col-start 11 / span 2;
+    grid-row: 3;
+  }
+  .main-footer {
+    grid-column: col-start / span 12;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+
+.dropbtn {
+   background-color: rgb(39, 38, 38);
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+   
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+  svg[Attributes Style] {
+    width: 42.709;
+    height: 59.559;
+}
+
+_______________________________________
+\\main.js
+
+let new_cases = document.getElementById("new_case");
+let new_death = document.getElementById("new_death");
+let total_death = document.getElementById("total_death");
+let total_recovered = document.getElementById("total_recovered");
+let total_cases = document.getElementById("total_cases");
+let total_new =document.getElementById("total_new");
+let table = document.getElementById('countries_stat')
+let total_tests=document.getElementById('total_tests');
+let test_pm=document.getElementById('test_per_million');
+let active_cases=document.getElementById('active_cases');
+// Fetching the Data from the server
+
+//Fetching the World Data
+fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+        "x-rapidapi-key": "53009286a0mshdc8ec356f7aa205p1e0e80jsn5858f548ed53"
+    }
+})
+.then(response => response.json().then( data => {
+    console.log(data);
+    //total_cases.innerHTML = 0;
+   // new_cases.innerHTML = data.new_cases;
+    //new_death.innerHTML = data.new_deaths;
+    //total_death.innerHTML = data.total_deaths;
+    //total_recovered.innerHTML = data.total_recovered;
+
+})).catch(err => {
+    console.log(err);
+});
+
+//Fetching The Case by Country Data
+fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+        "x-rapidapi-key": "53009286a0mshdc8ec356f7aa205p1e0e80jsn5858f548ed53"
+    }
+})
+.then(response => response.json().then(data =>{
+    console.log(data)
+    let countries_stat = data.countries_stat;
+//Getting all the country statistic using a loop
+    for(let i = 0; i<countries_stat.length;i++){
+        console.log(countries_stat[i]);
+        //we will start by inserting the new rows inside our table
+       /* let row = table.insertRow(i+1);
+        let country_name = row.insertCell(0);
+        let cases = row.insertCell(1);
+        let deaths = row.insertCell(2);
+        let serious_critical = row.insertCell(3);
+        let recovered_per_country = row.insertCell(4);
+        country_name.innerHTML = countries_stat[i].country_name;
+        cases.innerHTML = countries_stat[i].cases;
+        deaths.innerHTML = countries_stat[i].deaths;
+        serious_critical.innerHTML = countries_stat[i].serious_critical;
+        recovered_per_country.innerHTML = countries_stat[i].total_recovered;*/
+        if(countries_stat[i].country_name == "India"){
+        total_cases.innerHTML= `<font size="8">${countries_stat[i].cases}</font><font size="4"> [+${countries_stat[i].new_cases}]</font>`; 
+        total_death.innerHTML=`<font size="8">${countries_stat[i].deaths}</font><font size="4"> [+${countries_stat[i].new_deaths}]</font>`;
+        total_recovered.innerHTML=`<font size="8">${countries_stat[i].total_recovered}</font>`;
+        total_tests.innerHTML=`<font size="8">${countries_stat[i].total_tests}</font>`;
+        test_pm.innerHTML=`<font size="8">${countries_stat[i].tests_per_1m_population}</font>`;
+        active_cases.innerHTML=`<font size="8">${countries_stat[i].active_cases}</font>`;
+        }
+
+    }
+}))
+.catch(err => {
+    console.log(err);
+});
+
+________________________________________
+// navscript.js
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+
